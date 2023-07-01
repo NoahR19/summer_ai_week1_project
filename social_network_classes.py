@@ -25,10 +25,16 @@ class SocialNetwork:
 
 
 class Person:
+
+    def addMessage(self, username, message):
+        self.msgwaiting.append([username,message])
+
+
     def __init__(self, name, age): #Noah - Add inbox??
         self.id = name
         self.year = age
         self.friendlist = []
+        self.msgwaiting = []
 
     def add_friend(self, person_object):
         pass
