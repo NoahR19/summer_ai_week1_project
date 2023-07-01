@@ -3,6 +3,7 @@ class SocialNetwork:
     def __init__(self):
         self.list_of_people = [] # this instance variable is initialized to an empty list when social network is created, 
                                  # you can save objects of people on the network in this list
+        self.usernames = []
         
     ## For more challenge try this
     def save_social_media(self):
@@ -24,15 +25,14 @@ class SocialNetwork:
 
 
 class Person:
-    def __init__(self, name, age):
+    def __init__(self, name, age): #Noah - Add inbox??
         self.id = name
         self.year = age
         self.friendlist = []
 
     def add_friend(self, person_object):
-        #implement adding friend. Hint add to self.friendlist
         pass
 
-    def send_message(self):
+    def send_message(self, friend_name, message):
         #implement sending message to friend here
         pass
