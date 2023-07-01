@@ -30,7 +30,7 @@ if __name__ == "__main__":
                 ai_social_network.usernames.append(name)
 
 
-        elif choice == "2":
+        elif choice == "2": #check to see if there is an account
             inner_menu_choice = social_network_ui.manageAccountMenu()
             while True:
                 if inner_menu_choice == "6":
@@ -49,17 +49,19 @@ if __name__ == "__main__":
                     else:
                         print("Your input is invalid. Try Again!")
                 elif inner_menu_choice == '2':
-                    print(*ai_social_network.usernames, sep = "\n")
-                    friend = input('Choose a friend from the following to add or write "exit" to leave:\n\n')
-                    if friend == 'exit':
-                        break
-                    for i in ai_social_network.usernames:
+                    while 1:
+                        print(*ai_social_network.usernames, sep = "\n")
+                        friend = input('Choose a friend from the following to add or write "exit" to leave:\n\n')
+                        if friend == 'exit':
+                            break
                         if friend not in ai_social_network.usernames:
                             print('\nUser does not exist')
-                            print(*ai_social_network.usernames, sep = "\n")
-                            friend = input('Choose a friend from the following to add or write "exit" to leave:\n\n')
-                    pers.friendlist.append(friend)
+                        else:
+                            break
+                    if friend == 'exit':
+                        break
                     print('\n' + friend + ' has been added to your friends list!\n')
+                    pers.friendlist.append(friend)
                 elif inner_menu_choice == '3':
                     print('\n\nYou are currently friends with:')
                     print(*pers.friendlist, sep = ", ")
@@ -80,13 +82,26 @@ if __name__ == "__main__":
                     write = input('\nWho do you wish to send a message to a friend or write "exit" to leave:\n\n')
                     if write == "exit":
                         break
-                    for i in pers.friendlist:
-                        if write not in pers.friendlist:
-                            print('\nYou are not friends with this user')
-                            write = input('\nWho do you wish to send a message to a friend or write "exit" to leave:\n\n')
+                    if write not in pers.friendlist:
+                        print('\nYou are not friends with this user')
+                        continue
+                    whichPerson = pers.friendlist.index(write)
                     message = input('\nPlease write the message you wish to send to ' + write + ':\n\n')
+                    sendPerson = ai_social_network.list_of_people[whichPerson]
+                    sendPerson.addMessage(pers.id,message)
                     print('\nYour message to ' + write + ' has been sent!\n')
-                    
+                elif inner_menu_choice == '5':
+                    if pers.msgwaiting != []:
+                        for msg in pers.msgwaiting:
+                            print('\nMessage from ' + msg[0] + ':\n ' + msg[1])
+                        pers.msgwaiting = []
+                    else:
+                        print('\nYour inbox is empty')
+                    c = input('\nPress enter to return to the menu')
+                    break
+
+
+                
                 else:
                     inner_menu_choice = social_network_ui.manageAccountMenu()
                 
