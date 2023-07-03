@@ -1,0 +1,23 @@
+Class: Person
+
+Name
+Age
+Friendlist
+Messagelist
+
+ChangeName()
+ChangeAge()
+AddFriend()
+BlockFriend()
+SendMessage()
+ViewMessages()
+
+
+Class: Social Network
+
+ListOfUsernames
+ListOfAllUsers
+
+CreateAccount()
+ListAllUsers()
+ListAllUsernames()
