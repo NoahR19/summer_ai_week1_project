@@ -1,0 +1,39 @@
+1. People should be able to edit their details
+(assumes account is already created)
+
+Go to edit account through menu
+Choose to choose either name or age
+Program will promt user with what they want to chage their name/age to
+After answer is inputted it will be stored and old name/age will be replaced with new name/age
+
+2. People should be able to add other people as friends
+
+Go to add freinds feature through menu
+Program will print list of all users
+User will be prompted to choose which user they wish to friend
+User they choose will be added to a list that can later be printed to view friends
+
+3. People should be able to view all their friends
+
+Go to view friends feature through menu
+Program will print a list of all users added to friends list
+
+4. People should be able to block friends
+
+Go to view friends feature through menu
+Program will print a list of all users added to friends list
+User will be asked if they wish to block any friend in the list
+If they choose to block a friend, they will be asked which friend
+Friend chosen will be removed from friend list
+
+5. People should be able to send messages to their friends
+
+Go to send message feature through menu
+Program will print list of all friends and ask which friend the user wishes to send something to
+Once a friend is chosen the user will be able to type a message and send it
+The sent message will be stored in the friend's inbox list
+
+6. Finally people should be able to check messages they have received from their friends
+
+Go to view message feature through menu
+If the user has received any message the user that sent the message and the body of the message will be printed through their inbox list
